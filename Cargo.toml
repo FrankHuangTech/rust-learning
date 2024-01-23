@@ -1,5 +1,5 @@
 [workspace]
 
-members=[
+members=[ "guess_game",
     "webserver",
 ]
