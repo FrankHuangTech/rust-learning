@@ -24,6 +24,12 @@ fn main() {
             Err(_) => continue,
         };
 
+        if guess_number < begin || guess_number > end {
+            println!("Guess number MUST in[{begin},{end}],Try again:");
+            continue
+        }
+
+
         // println!("You guess is:{guess_number}");
 
         match guess_number.cmp(&secret_number) {
@@ -38,7 +44,7 @@ fn main() {
                 io::stdout().flush().expect("");
             }
             Ordering::Equal => {
-                println!("Bingo! You win after try {count} times.");
+                println!("Bingo!The MAGIC NUMBER is {guess_number}, You win after try {count} times.");
                 break;
             }
         }
